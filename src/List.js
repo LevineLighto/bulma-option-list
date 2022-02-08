@@ -111,6 +111,7 @@ class OptionList{
         `),
             input = CreateElement({
                 tagname: 'li',
+                classnames: 'option-list-item',
                 content: content
             });
 
@@ -134,6 +135,7 @@ class OptionList{
     _InsertCustomItem({label, value}) {
         let item = CreateElement({
                 tagname: 'li',
+                classnames: 'option-list-item',
                 attributes: {
                     value: value,
                     isCustom: true
