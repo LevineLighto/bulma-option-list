@@ -3,7 +3,7 @@ Create interactable lists to select options.
 Press the plus (+) button in the options on the left to select it, and press the minus (-) button in the options on the right to deselect it.
 
 ## Usage
-* Make sure to include Bulma's CSS and Font Awesome to make sure it works properly
+_Make sure to include Bulma's CSS and Font Awesome to make sure it works properly_
 ``` HTML
 ...
 <head>
