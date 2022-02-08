@@ -211,6 +211,7 @@ class OptionList{
                     let button = (list == this.availableList ? {icon: 'plus', class: 'primary'} : {icon: 'minus', class: 'danger'});
                     const ListItem = CreateElement({
                             tagname: 'li',
+                            classnames: 'option-list-item',
                             attributes: {
                                 value: ItemData.value
                             },
@@ -344,11 +345,11 @@ class OptionList{
             }),
             addedList = this.addedList = CreateElement({
                 tagname: 'ul',
-                classnames: 'menu-list',
+                classnames: 'menu-list option-list',
             }),
             availableList = this.availableList = CreateElement({
                 tagname: 'ul',
-                classnames: 'menu-list',
+                classnames: 'menu-list option-list',
             });
 
         this._PopulateList(addedList, this.data.added);
