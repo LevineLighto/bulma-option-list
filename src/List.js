@@ -3,11 +3,12 @@ import {DataFetch} from "./DataFetch.js";
 import {DataSend} from "./DataSend.js";
 
 class OptionList{
-    constructor({target, data, dataURL, addURL, removeURL, onAdd, onRemove}) {
+    constructor({target, data, dataURL, addURL, removeURL, onAdd, onRemove, noCustomItem = false}) {
         this.target = document.querySelector(target);
         if(this.target.nodeName == "INPUT" || this.target.nodeName == "TEXTAREA"){
             this.targetIsInput = true;
         }
+        if(noCustomItem){ this.noCustomItem = true; } else { this.noCustomItem = false; }
 
         if(dataURL){
             this.data = DataFetch({
@@ -81,6 +82,7 @@ class OptionList{
     }
 
     _CreateCustomItem() {
+        if(this.noCustomItem) return;
         let content = (this.DataIsObject ? `
         <a>
         <form>
@@ -133,6 +135,7 @@ class OptionList{
     }
 
     _InsertCustomItem({label, value}) {
+        if(this.noCustomItem) return;
         let item = CreateElement({
                 tagname: 'li',
                 classnames: 'option-list-item',
@@ -243,7 +246,7 @@ class OptionList{
             return;
         }
 
-        if(list == this.addedList){
+        if(list == this.addedList && !this.noCustomItem){
             const NewCustomItem = this.CustomInput = CreateElement({
                 name: 'li',
                 attributes: {

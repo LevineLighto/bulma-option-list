@@ -1,6 +1,6 @@
 {
   "name": "@levinelito/bulma-option-list",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "List of selectable options styled with Bulma CSS",
   "main": "dist/output.js",
   "scripts": {
